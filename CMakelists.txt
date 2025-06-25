@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.15)
+project(GoQuant LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
+
+# 1) Load vcpkg toolchain BEFORE any find_package
+if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+  set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+      CACHE STRING "")
+endif()
+
+# 2) Single-header Crow
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# 3) Find the vcpkg-installed ports
+find_package(asio       CONFIG REQUIRED)  # this will load asio-config.cmake
+find_package(nlohmann_json CONFIG REQUIRED)
+find_package(GTest      CONFIG REQUIRED)
+find_package(Threads    REQUIRED)
+
+add_subdirectory(src)
+add_subdirectory(tests)
