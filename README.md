@@ -15,7 +15,7 @@ This project implements a real-time, high-performance cryptocurrency matching en
 
 ## 🛠️ Technologies & Tools
 
-- **Language:** C++20  
+- **Language:** C++17  
 - **Build System:** CMake  
 - **Web Framework:** Crow  
 - **JSON:** nlohmann/json  
