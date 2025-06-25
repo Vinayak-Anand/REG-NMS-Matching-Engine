@@ -1,0 +1,39 @@
+# Ignore build outputs
+/build/
+/out/
+/bin/
+/lib/
+/dist/
+/Debug/
+/Release/
+
+# Ignore user-specific files
+*.log
+*.user
+*.suo
+*.VC.db
+*.vcxproj.user
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore vcpkg and CMake build folders
+/vcpkg/
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore compiled object files and executables
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# Ignore backup files
+*~
+*.swp
